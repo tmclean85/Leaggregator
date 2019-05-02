@@ -20,7 +20,6 @@ class Input extends Component {
 
   onClick = (event) => {
     event.preventDefault();
-    console.log('clicked', this.state.summoner);
     this.setState({ isLoading: true, data: null});
     fetch(`http://localhost:8000?summoner=${this.state.summoner}`)
     .then(result => { return result.json() })
@@ -30,16 +29,19 @@ class Input extends Component {
 
   render() {
     return (
-      <div>
+      <div className="content-main">
+        <h1>Leaggregator</h1>
         <input 
           type="text"
           value={this.state.value}
           onChange={this.onChange}
+          placeholder="Summoner Name"
         />
         <button onClick={this.onClick}>Submit</button>
-        <Results 
+        <Results
           isLoading={this.state.isLoading}
           data={this.state.data}
+          name={this.state.summoner}
         />
       </div>
     )
