@@ -1,4 +1,4 @@
-##Leaggregator
+## Leaggregator
 A React application which queries the associated server with LoL Summoner names and displays recent match API data. 
 Built for Battlefy for the purpose of technical assessment.
 
