@@ -21,7 +21,7 @@ class Input extends Component {
   onClick = (event) => {
     event.preventDefault();
     this.setState({ isLoading: true, data: null});
-    fetch(`https://intense-ridge-51716.herokuapp.com?summoner=${this.state.summoner}`)
+    fetch(`http://localhost:8000?summoner=${this.state.summoner}`)
     .then(result => { return result.json() })
     .then(res => { this.setState({ data: res }) })
     .then(() => this.setState({ isLoading: false}));
